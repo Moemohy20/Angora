@@ -1,0 +1,423 @@
+:root {
+  --main-color: #f25454;
+  --p-head: #999999;
+  --p-normal: #666666;
+  --section-bg: #fafafa;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+}
+/************************* my framework *****************************/
+h2.section-head {
+  text-transform: capitalize;
+  font-weight: bold;
+  position: relative;
+  z-index: 99;
+}
+.section-head::after {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: -15px;
+  width: 25%;
+  height: 1px;
+  background-color: tomato;
+  transition: all 0.2s ease-in;
+}
+.head:hover .section-head::after {
+  width: 35%;
+}
+.head .back-text {
+  text-transform: capitalize;
+  position: absolute;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #d3d9e4;
+  opacity: 0.5;
+  top: -18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.head p {
+  max-width: 55%;
+  color: --p-head;
+  margin-top: 2rem;
+}
+/************************* header section *****************************/
+.landing {
+  height: 100vh;
+}
+.landing .navbar .navbar-nav li a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--main-color);
+}
+.landing .navbar .navbar-nav li a:hover {
+  color: var(--main-color);
+}
+.landing .social-nav li a {
+  padding-right: 12px;
+  color: #fff;
+}
+.landing .settings {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  background-color: yellow;
+  width: 35px;
+  height: 38px;
+  z-index: 9;
+}
+.landing .circ {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  border: 1px solid #fff;
+  width: 25px;
+  height: 40px;
+  z-index: 9;
+  transform: translateX(-50%);
+}
+.landing .circ .dot {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  margin: 2px auto 0;
+  border-radius: 50%;
+  opacity: 1;
+  animation: move 0.9s infinite;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(60%);
+    /* opacity: 0.5; */
+  }
+  75% {
+    transform: translateY(90%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+}
+.landing .carousel h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  width: 25%;
+}
+.landing .slide1 {
+  background-image: url(../images/slideshow-1.jpg);
+}
+.landing .slide2 {
+  background-image: url(../images/slideshow-2.jpg);
+}
+.landing .slide3 {
+  background-image: url(../images/slideshow-3.jpg);
+}
+.landing .carousel-control-prev {
+  width: fit-content;
+  height: fit-content;
+  padding: 2px;
+  top: 45%;
+  left: -1px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  opacity: 1;
+}
+.landing .carousel-control-next {
+  width: fit-content;
+  height: fit-content;
+  padding: 2px;
+  top: calc(45% + 37px);
+  left: -1px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  opacity: 1;
+}
+.landing .carousel-control-next::after,
+.landing .carousel-control-prev::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 100%;
+  height: 100%;
+  transition: right 0.5s;
+  z-index: -1;
+}
+.landing .carousel-control-next:hover,
+.landing .carousel-control-prev:hover {
+  color: var(--main-color);
+}
+.landing .carousel-control-next:hover::after,
+.landing .carousel-control-prev:hover::after {
+  right: 0;
+}
+.landing .carousel-control-prev-icon,
+.landing .carousel-control-next-icon {
+  background-image: none;
+}
+
+/************************* about-us section *****************************/
+.about-us .head p {
+  max-width: 55%;
+  color: --p-head;
+  margin-top: 2rem;
+}
+.about-us .txt p {
+  font-size: 0.9rem;
+  color: #666666;
+}
+.about-us .percent p {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.about-us .percent .progress .progress-bar {
+  position: relative;
+  overflow: visible;
+  background-color: var(--main-color);
+}
+.progress-bar::after {
+  content: attr(aria-valuenow);
+  position: absolute;
+  font-size: 12px;
+  top: -24px;
+  right: 0;
+  color: #666;
+}
+
+/************************* Team section *****************************/
+.team .person .person-foto .img-layer {
+  transition: all 0.3s;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.team .person .person-foto .img-layer a {
+  text-decoration: none;
+  color: #fff;
+}
+.team .person .person-foto {
+  overflow: hidden;
+}
+.team .person .person-foto img {
+  transition: all 0.3s;
+}
+.team .person:hover .person-foto img {
+  transform: scale(1.1);
+}
+.team .person:hover .person-foto .img-layer {
+  opacity: 1;
+}
+.team .person .person-info h5 {
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.team .person:hover .person-info h5 {
+  color: var(--main-color);
+}
+.team .person .person-info p {
+  font-size: 0.8rem;
+  color: var(--p-normal);
+}
+
+.team .idea {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.team button {
+  border: none;
+  padding: 10px 27px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  transition: all 0.4s;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.team button:hover {
+  background-color: #f38383;
+}
+
+/************************* Services section *****************************/
+.services {
+  background-color: var(--section-bg);
+}
+.services .service-txt p {
+  font-size: 0.9rem;
+  color: var(--p-normal);
+}
+.services i {
+  color: var(--main-color);
+}
+.services .service .service-txt h6 {
+  transition: all 0.3s;
+}
+.services .service:hover .service-txt h6 {
+  color: var(--main-color);
+}
+
+/************************* review section *****************************/
+
+.review .quote {
+  font-size: 1.6rem;
+  max-width: 550px;
+  margin: auto;
+}
+.review .bto {
+  height: fit-content;
+}
+.review .bto h5 {
+  font-size: 0.7rem;
+  margin: 5px 0px 0px;
+}
+.review .bto span {
+  font-size: 0.7rem;
+}
+.review .bt-txt {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.review .carousel-indicators .active .bt-txt {
+  opacity: 1;
+}
+.review .carousel {
+  width: 49%;
+  margin: auto;
+  overflow: hidden;
+}
+.review .carousel-indicators {
+  width: fit-content;
+  margin: auto;
+}
+.review .carousel-indicators [data-bs-target] {
+  text-indent: 0;
+  width: 85px;
+  height: 50px;
+  margin-bottom: 5rem;
+  background-color: transparent;
+}
+/************************* Contact-us section *****************************/
+.contact-us {
+  background-color: var(--section-bg);
+}
+.contact-us .contact-txt i {
+  color: var(--main-color);
+}
+.contact-us .contact-txt .icon {
+  width: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.contact-us .contact-txt a {
+  text-decoration: none;
+  color: var(--p-normal);
+  transition: all 0.3s;
+}
+.contact-us .contact-txt a:hover {
+  color: var(--main-color);
+}
+.contact-us .contact-txt h6 {
+  transition: all 0.3s;
+}
+.contact-us .contact-txt .contact:hover h6 {
+  color: var(--main-color);
+}
+.contact-us .contact-txt p {
+  font-size: 0.8rem;
+  color: var(--p-normal);
+}
+.contact-us form button {
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  transition: all 0.4s;
+  font-size: 0.8rem;
+}
+.contact-us form button:hover {
+  background-color: #f38383;
+}
+
+/************************* footer section *****************************/
+.footer {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.footer .arrow {
+  background-color: var(--main-color);
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+.footer .arrow:hover {
+  opacity: 1;
+}
+.footer h5 {
+  color: #fff;
+}
+footer .fot-top {
+  background-image: url(../images/dotted-map.png);
+  background-position: center center;
+  background-size: contain;
+}
+.footer a {
+  text-decoration: none;
+}
+footer .fot-top a {
+  color: #b0b0b0;
+}
+footer a:hover {
+  color: var(--main-color);
+}
+footer .fot-top .box .links {
+  max-width: 80%;
+}
+footer .fot-top .box .links a {
+  border: 1px solid grey;
+  padding: 3px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.footer .fot-bot {
+  background-color: #1a1a1a;
+  color: #b0b0b0;
+}
+.footer .fot-bot .social a {
+  color: #fff;
+}
+.footer .fot-bot .social a:hover {
+  color: var(--main-color);
+}
